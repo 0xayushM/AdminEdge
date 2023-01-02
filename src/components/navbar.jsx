@@ -19,44 +19,48 @@ const NavButton = ({title,customFunc,icon,color,dotColor}) => (
 )
 
 const Navbar = () => {
-  const {activeMenu, setActiveMenu,isClicked,setIsClicked,handleClick,screenSize,setScreenSize, currentColor, setCartbar} = useStateContext()
+  const {activeMenu, setActiveMenu,isClicked,setIsClicked,handleClick,screenSize,setScreenSize,currentColor, setCartbar} = useStateContext()
 
   useEffect(() => {
-    const handleResize = () => setScreenSize(window.innerWidth)
-    window.addEventListener('resize',handleResize)
-    handleResize()
+    const handleResize = () => setScreenSize(window.innerWidth);
 
-    return () => window.removeEventListener('resize',handleResize)
-  },[])
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
-    if(screenSize <= 900) {
-      setActiveMenu(false)
+    if (screenSize <= 900) {
+      setActiveMenu(false);
     } else {
-      setActiveMenu(true)
+      setActiveMenu(true);
     }
-  },[screenSize])
+  }, [screenSize]);
+
+  const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
       <NavButton
         title="Menu"
-        customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
+        customFunc={handleActiveMenu}
         color={currentColor}
         icon={<AiOutlineMenu />}
       />
       <div className="flex">
         <NavButton
           title="Cart"
-          customFunc={() => handleClick("cart")}
-          onClick={()=>setCartbar(true)}
+          customFunc={() => handleClick('cart')}
+          // onClick={() => setCartbar(true)}
           color={currentColor}
           icon={<FiShoppingCart />}
         />
         <NavButton
           title="Chat"
           dotColor="#03C9D7"
-          customFunc={() => handleClick('chat')}
+          customFunc={() => handleClick("chat")}
           color={currentColor}
           icon={<BsChatLeft />}
         />
