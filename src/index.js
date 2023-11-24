@@ -1,13 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from './App';
-import './index.css'
-import { ContextProvider } from "./contexts/contextProvider";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-//this hooks our react application to the root div
+import './index.css';
+import App from './App';
+import { ContextProvider } from './contexts/ContextProvider';
+
 ReactDOM.render(
-  <ContextProvider>
-    <App />
-  </ContextProvider>,
-  document.getElementById("root")
-); 
+  <React.StrictMode>
+    <ContextProvider>
+      <App />
+    </ContextProvider>
+  </React.StrictMode>,
+  document.getElementById('root'),
+);
