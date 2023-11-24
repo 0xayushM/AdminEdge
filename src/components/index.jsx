@@ -1,17 +1,17 @@
+export { default as Button } from './button.jsx';
+export { default as ThemeSettings } from './themeSettings.jsx';
+export { default as Sidebar } from './sidebar.jsx';
 // eslint-disable-next-line import/no-cycle
-// export { default as Button } from './Button';
-// export { default as ThemeSettings } from './ThemeSettings';
-export { default as Sidebar } from './Sidebar';
-export { default as Navbar } from './Navbar';
-export { default as Footer } from './Footer';
-export { default as Cart } from './Cart';
-export { default as Chat } from './Chat';
-export { default as Notification } from './Notification';
-export { default as UserProfile } from './UserProfile';
-export { default as SparkLine } from './Charts/SparkLine';
-export { default as LineChart } from './Charts/LineChart';
-export { default as Stacked } from './Charts/Stacked';
-export { default as Pie } from './Charts/Pie';
-export { default as ChartsHeader } from './ChartsHeader';
-export { default as Header } from './Header';
+export { default as Navbar } from './navbar.jsx';
+export { default as Footer } from './footer.jsx';
+export { default as Cart } from './cart.jsx';
+export { default as Chat } from './chat.jsx';
+export { default as Notification } from './notification.jsx';
+export { default as UserProfile } from './userProfile.jsx';
+export { default as SparkLine } from './Charts/sparkLine.jsx';
+export { default as LineChart } from './Charts/lineChart.jsx';
+export { default as Stacked } from './Charts/stacked.jsx';
+export { default as Pie } from './Charts/pie.jsx';
+export { default as ChartsHeader } from './ChartsHeader.jsx';
+export { default as Header } from './header.jsx';
 
